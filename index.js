@@ -23,28 +23,31 @@ function roads() {
 }
 
 function spiritMovement() {
-    spirit.speed -= 0.1;
-    if (kb.pressing('left')) {
-        spirit.vel.x -= 0.2;
+    if (keyCode == RIGHT_ARROW && keyIsPressed) {
+        spirit.x += 1;
     }
-    else if (kb.pressing('right')) {
-        spirit.vel.x += 0.2;
+    else if (keyCode == DOWN_ARROW && keyIsPressed) {
+        spirit.y += 1;
     }
-    else if(kb.pressing('up')) {
-        spirit.vel.y -= 0.2;
+    else if (keyCode == LEFT_ARROW && keyIsPressed) {
+        spirit.x -= 1;
     }
-    else if(kb.pressing('down')) {
-        spirit.vel.y += 0.2;
+    else if (keyCode == UP_ARROW && keyIsPressed) {
+        spirit.y -= 1;
     }
-    else {
-        spirit.vel = 0;
+    else if (key == ' ') {
+      spirit.setSpeed(0, 0);
     }
-}
+    return false;
+  }
+
+
 
 function spiritsetup() {
-    spirit = new Sprite(25, windowHeight/2, 40, 'static');
-    //spirit.diameter = 50;
-    //spirit.x = 150;
-    //spirit.y = 50;
-    //spirit.collider = 'static';
+   spirit = new Sprite(); 
+   spirit.diameter = 40;
+   spirit.x = 25;
+   spirit.y = windowHeight/2;
+   spirit.shapeColor = color(121, 242, 232);
+   spirit.collider = 'static';
 }
