@@ -2,8 +2,7 @@ let spirit;
 
 function setup() {
     new Canvas(windowWidth, windowHeight);
-    spirit = new Sprite(25, windowHeight/2, 40, 'static');
-    //setupSpirit();
+    spiritsetup();
 }
 
 function draw() {
@@ -11,7 +10,7 @@ function draw() {
     noStroke();
 
     roads();
-    //spiritMovement();
+    spiritMovement();
 }
 
 function roads() {
@@ -21,15 +20,6 @@ function roads() {
         rect(i, 0, 50, windowHeight);
         i = i + 100;
     }
-}
-
-function setupSpirit() {
-    spirit = new Sprite(150, 150, 50, 'static');
-    spirit.color = colors.blue;
-    //spirit.diameter = 50;
-    //spirit.x = 150;
-    //spirit.y = 50;
-    //spirit.collider = 'static';
 }
 
 function spiritMovement() {
@@ -49,4 +39,12 @@ function spiritMovement() {
     else {
         spirit.vel = 0;
     }
+}
+
+function spiritsetup() {
+    spirit = new Sprite(25, windowHeight/2, 40, 'static');
+    //spirit.diameter = 50;
+    //spirit.x = 150;
+    //spirit.y = 50;
+    //spirit.collider = 'static';
 }
